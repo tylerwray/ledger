@@ -1,16 +1,16 @@
 package com.ledger.domain;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.UUID;
 
-@Entity
-@Table(indexes = {
-        @Index(name = "source_id", columnList = "source_id"),
-        @Index(name = "destination_id", columnList = "destination_id"),
-        @Index(name = "uid", columnList = "uid")
-})
+@Entity(name = "transactions")
+@Table(
+        name = "transactions",
+        indexes = {
+                @Index(name = "transactions_source_id_index", columnList = "source_id"),
+                @Index(name = "transactions_destination_id_index", columnList = "destination_id"),
+                @Index(name = "transactions_uid_index", columnList = "uid")
+        })
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

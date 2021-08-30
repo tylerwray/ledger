@@ -9,6 +9,6 @@ import java.util.UUID;
 
 @Repository
 public interface TransactionRepository extends CrudRepository<Transaction, Long> {
-    @Query("SELECT t FROM Transaction t WHERE t.uid = ?1")
+    @Query("SELECT t FROM transactions t WHERE t.uid = ?1")
     Transaction findByUid(UUID uid);
 }
